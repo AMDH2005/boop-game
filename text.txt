@@ -1,0 +1,54 @@
+Part 2:
+
+    some work in is_legal
+    most work in make_move function:
+        when writing code for checking the surrounding spaces, just write one direction at a time
+
+
+if (current_player % 2 == 1) //if player 1, RED
+                {
+                    if (board[i][j].getStatus().at(0) == 'r' || board[i][j].getStatus().at(0) == 'R')
+                    {
+                        if ((board[i - 1][j - 1].getStatus().at(0) == 'r' || board[i - 1][j - 1].getStatus().at(0) == 'R') && (board[i + 1][j + 1].getStatus().at(0) == 'r' || board[i + 1][j + 1].getStatus().at(0) == 'R'))
+                        {
+                            return true;
+                        }
+                        if ((board[i - 1][j].getStatus().at(0) == 'r' || board[i - 1][j - 1].getStatus().at(0) == 'R') && (board[i + 1][j].getStatus().at(0) == 'r' || board[i + 1][j].getStatus().at(0) == 'R'))
+                        {
+                            return true;
+                        }
+                        if ((board[i - 1][j + 1].getStatus().at(0) == 'r' || board[i - 1][j + 1].getStatus().at(0) == 'R') && (board[i + 1][j - 1].getStatus().at(0) == 'r' || board[i + 1][j - 1].getStatus().at(0) == 'R'))
+                        {
+                            return true;
+                        }
+                        if ((board[i][j - 1].getStatus().at(0) == 'r' || board[i][j - 1].getStatus().at(0) == 'R') && (board[i][j + 1].getStatus().at(0) == 'r' || board[i][j + 1].getStatus().at(0) == 'R'))
+                        {
+                            return true;
+                        }
+                        
+                    }
+                    
+                }
+                else if (current_player % 2 == 0) //if player 2, BLUE
+                {
+                    if (board[i][j].getStatus().at(0) == 'b' || board[i][j].getStatus().at(0) == 'B')
+                    {
+                        if ((board[i - 1][j - 1].getStatus().at(0) == 'b' || board[i - 1][j - 1].getStatus().at(0) == 'B') && (board[i + 1][j + 1].getStatus().at(0) == 'b' || board[i + 1][j + 1].getStatus().at(0) == 'B'))
+                        {
+                            return true;
+                        }
+                        if ((board[i - 1][j].getStatus().at(0) == 'b' || board[i - 1][j - 1].getStatus().at(0) == 'B') && (board[i + 1][j].getStatus().at(0) == 'b' || board[i + 1][j].getStatus().at(0) == 'B'))
+                        {
+                            return true;
+                        }
+                        if ((board[i - 1][j + 1].getStatus().at(0) == 'b' || board[i - 1][j + 1].getStatus().at(0) == 'B') && (board[i + 1][j - 1].getStatus().at(0) == 'b' || board[i + 1][j - 1].getStatus().at(0) == 'B'))
+                        {
+                            return true;
+                        }
+                        if ((board[i][j - 1].getStatus().at(0) == 'b' || board[i][j - 1].getStatus().at(0) == 'B') && (board[i][j + 1].getStatus().at(0) == 'b' || board[i][j + 1].getStatus().at(0) == 'B'))
+                        {
+                            return true;
+                        }
+                        
+                    }
+                    
