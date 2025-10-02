@@ -52,27 +52,27 @@ namespace main_savitch_14
 
     std::string boop::get_user_move() const
     {
+        std::string move;
+
         if (move_type == 0)
         {
-            std::string move;
             std::cout << "Enter your move (Format: *P/D* *Row* *Column*): ";
             std::getline(std::cin, move);
             return move;
         }
         else if (move_type == 1)
         {
-            std::string move;
             std::cout << "You have at least one row of three available, enter the center space of the one you wish to remove and the direction of the row (eg. 'A3H' for center space at A3, horizontal line): ";
             std::getline(std::cin, move);
             return move;
         }
         else if (move_type == 2)
         {
-            std::string move;
             std::cout << "You have no remaining pieces to play, pick one of your placed pieces to pick up (*row* *column*): ";
             std::getline(std::cin, move);
             return move;
         }
+        return move;
     }
 
     void boop::make_move(const std::string &move)
@@ -1259,12 +1259,8 @@ namespace main_savitch_14
         {
             return -1;
         }
-        if (blue_score > red_score)
-        {
-            return 1;
-        }
-        
-        
+        else
+        return 1;
     }
 
     bool boop::is_game_over() const
@@ -1633,6 +1629,7 @@ namespace main_savitch_14
                 return true;
             }
         }
+        return false;
     }
 
     std::string boop::get_location(const std::string &move) const
@@ -1765,6 +1762,7 @@ namespace main_savitch_14
 
             return new_move;
         }
+        return move;
     }
 
     void boop::display_message(const std::string &message) const
